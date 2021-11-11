@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.banner{
+    z-index: 1;
+    opacity: 1;
+    background-size: cover;
+    position: relative;
+    background-image:linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+    ), url('https://images6.alphacoders.com/434/434470.jpg');
+    background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
+    background-repeat:no-repeat;
+}
+.center{
+    opacity: 1 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+/* Navbar */
+#wrapper{
+    position: absolute;
+    top:0;
+    z-index: 2;
+    width: 100%;
+}
+#navbar{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /*background-color: #273534;*/
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: -1;
+}
+#logo{
+    color: whitesmoke;
+    z-index: -1;
+    top: 0px;
+    left:10px;
+    position: absolute;
+}
+#main{
+    color: whitesmoke;
+    height: 0px;
+    background-color: #273534;
+    z-index: 1;
+    visibility: visible;
+    opacity: 0;
+    transition:0.3s;
+}
+#main h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#main a{
+    position: relative;
+    text-decoration: none;
+    color: white; /* For Example */
+    font-weight: 100;
+
+}
+
+#main a:hover{
+    color: white;
+}
+
+#main a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: whitesmoke;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#main a:hover::before {
+    transform: scaleX(1);
+}
+.notVisibleList{
+    visibility: hidden;
+}
+.visibleList{
+    visibility: visible;
+}
+
+#menu {
+    top:10px;
+    right: 30px;
+    position: fixed;
+
+    float: right;
+}
+#menu div {
+    position: relative;
+    width: 35px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin: 6px 0;
+}
+
+#m1, #m2, #m3{
+    top: 0px;
+    /* Initial value for rotate is needed for transition to work */
+    transform:none;
+
+    /* CSS transition creates smooth effect */
+    transition:0.1s;
+}
+
+a.filldiv {
+    z-index: 99;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    text-decoration: none;
+}

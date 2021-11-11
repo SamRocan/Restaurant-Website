@@ -7,6 +7,7 @@ var navitems = document.getElementById("navlist")
 $(testbutton).click(function() {
     console.log($(navMain).css("visibility"))
     if ($(spinner1).css("top") == "0px" ){
+        $(navMain).height("calc(100vh + 60px)")
         $(spinner1).animate({
             top: '11px'
         });
@@ -21,6 +22,7 @@ $(testbutton).click(function() {
             opacity: 1
         });
     } else {
+        $(navMain).height("0px")
         $(spinner1).animate({
             top: '0px'
         });
@@ -43,8 +45,7 @@ const menu = document.getElementById('menu')
 const divs =  menu.querySelectorAll('div')
 const wrapper = document.getElementById('wrapper')
 $(doc).scroll(function() {
-    if ($(doc).scrollTop() >= $(wrapper).height()-65) {
-
+    if ($(doc).scrollTop() >= $(wrapper).height()) {
         divs.forEach(function (todo){
             $(divs).css('background-color', 'black');
         })
