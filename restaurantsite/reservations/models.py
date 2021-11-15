@@ -4,11 +4,13 @@ import datetime
 
 # Create your models here.
 class Table(models.Model):
+    table_number = models.PositiveIntegerField(default=1, primary_key=True)
     seats = models.PositiveIntegerField()
     booked = models.BooleanField(default=False)
+    svg_path = models.CharField(default="", max_length=10000)
 
     def __str__(self):
-        return str(self.seats) + ": " + str(self.id)
+        return "Table_"+ str(self.table_number)
 
 class Reservation(models.Model):
     table = models.ForeignKey(Table, on_delete=models.CASCADE)

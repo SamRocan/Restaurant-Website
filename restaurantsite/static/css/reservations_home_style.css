@@ -45,7 +45,7 @@ g * {
 #Table_16 .st1, #Table_17 .st1, #Table_18 .st1, #Table_19 .st1, #Table_20 .st1,
 #Booked_Room .st1{
     stroke: none;
-    fill: rgba(0, 0, 0, 0.2);
+    fill: rgba(0, 0, 0, 0.0);
 
 }
 /*Selected*/
