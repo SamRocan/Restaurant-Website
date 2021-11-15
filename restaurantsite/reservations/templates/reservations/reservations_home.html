@@ -11,6 +11,24 @@
 <div class="container-fluid">
     <h1>Reservations</h1>
     <h4 id="tabNum"></h4>
+    <form method="post" style="text-align: center">
+        {% csrf_token %}
+        <label for="dateVar">Select a time:</label>
+        <input type="date" id="dateVar" name="dateVar">
+        <br>
+        <br>
+        <label for="timeVar">Select a time:</label>
+        <input type="time" id="timeVar" name="timeVar">
+        <br>
+        <br>
+        <label for="numVar">No. of people: </label>
+        <input type="number" id="numVar" name="numVar">
+            <input type="submit" value="Search">
+
+    </form>
+    {% for reservation in reservations %}
+    <p>{{reservation}}</p>
+    {% endfor %}
     <!--
     <form method="post" style="text-align: center">
         {% csrf_token %}
