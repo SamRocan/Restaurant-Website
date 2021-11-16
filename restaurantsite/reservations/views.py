@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 def reservations_home(request):
     tables = Table.objects.all()
     reservations = Reservation.objects.all()
-
+    request.session['reservation'] = []
     #initialize all tables to not booked
     for table in tables:
         table.booked = False
@@ -20,6 +20,7 @@ def reservations_home(request):
         startDate = request.POST.get("dateVar")
         startTime = request.POST.get("timeVar")
         people = int(request.POST.get("numVar"))
+        request.session['reservation'] = [startDate, startTime, people]
         dt = datetime.fromisoformat(startDate + " " + startTime+"+00:00")
 
         tables = Table.objects.all()
@@ -49,10 +50,14 @@ def reservations_home(request):
                         table.booked = True
     return render(request, 'reservations/reservations_home.html', {'tables':tables, 'reservations':reservations})
 
+def reservation_confirm(request):
+
+    info = request.session['reservation']
+    info.append(request.session['table'])
+    return render(request, 'reservations/reservation_confirm.html', {'info':info})
 def json_view(request):
-    result = request.GET.get('result', None)
-    print(result)
+    request.session['table'] = request.GET.get('result', None)
     data = {
-        "worked":"worked",
+        "info":request.session['reservation'],
     }
     return JsonResponse(data)

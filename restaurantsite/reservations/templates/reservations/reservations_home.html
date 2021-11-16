@@ -10,7 +10,10 @@
 </div>
 <div class="container-fluid">
     <h1>Reservations</h1>
-    <h4 id="tabNum"></h4>
+
+        <h4 id="tabNum" name="tabVar"></h4>
+    <a href="{% url 'reservation_confirm' %}" class="btn btn-success" style="display: none" id="resConfirm">Confirm Reservation</a>
+    <br>
     <form method="post" style="text-align: center">
         {% csrf_token %}
         <label for="dateVar">Select a time:</label>
@@ -59,16 +62,10 @@
                     }
                     tableNo = document.getElementById(tableId)
                     tabLab = document.getElementById('tabNum')
-                    /*resDate = document.getElementById('dateVar').value
+                    resConfirm = document.getElementById('resConfirm')
+                    resDate = document.getElementById('dateVar').value
                     resTime = document.getElementById('timeVar').value
-                    resNum = document.getElementById('numVar').value*/
-                    if(String(tableNo.id).substring(0,5) == 'Table'){
-                        tabLab.innerText = String(tableNo.id).substring(0,5) + " " + String(tableNo.id).substring(6,10)
-                    }
-                    else{
-                        tabLab.innerText = "Private Room"
-                    }
-                    console.log(tableNo)
+                    resNum = document.getElementById('numVar').value
                     tableArea = tableNo.getElementsByClassName('st1')[0]
                     tableArea.style.fill = "rgba(13, 166, 226, 0.2)"
 
@@ -76,16 +73,23 @@
                         type: "GET",
                         url: '/reservations/json',
                         data: {
-                            "result": String(tableNo.id),
+                            "result":String(tableNo.id)
                         },
                         dataType: "json",
                         success: function (data) {
-                            console.log(data["worked"])
+                            console.log("Running")
+                            data["info"].push(String(tableNo.id))
+                            tabLab.innerText = ""
+                            for (let i = 0; i < data["info"].length; i++) {
+                                tabLab.innerText += String(data["info"][i]) + "\n" ;
+                            }
+                            resConfirm.style.display = "block"
                         },
                         failure: function () {
                         }
                     });
                 }
+
             ]]>
         </script>
 <g id="Table_1">

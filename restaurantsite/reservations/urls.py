@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.reservations_home, name='reservations_home'),
-    path('json', views.json_view, name='json_view')
+    path('confirm/', views.reservation_confirm, name='reservation_confirm'),
+    path('json', views.json_view, name='json_view'),
 ]
