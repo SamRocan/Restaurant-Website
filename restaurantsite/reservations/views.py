@@ -53,7 +53,15 @@ def reservations_home(request):
 def reservation_confirm(request):
 
     info = request.session['reservation']
+    for i in info:
+        print(i)
+
+    t = str(request.session['table']).replace('Table_', '')
+    table = Table.objects.get(table_number=int(t))
+    dt = datetime.fromisoformat(str(info[0]) + " " + str(info[1]) +"+00:00")
+    Reservation.objects.create(table=table, name="blank", email="blank@gmail.com",  people=info[2], date=dt)
     info.append(request.session['table'])
+
     return render(request, 'reservations/reservation_confirm.html', {'info':info})
 def json_view(request):
     request.session['table'] = request.GET.get('result', None)
