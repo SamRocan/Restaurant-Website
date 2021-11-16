@@ -59,8 +59,11 @@
                     }
                     tableNo = document.getElementById(tableId)
                     tabLab = document.getElementById('tabNum')
+                    /*resDate = document.getElementById('dateVar').value
+                    resTime = document.getElementById('timeVar').value
+                    resNum = document.getElementById('numVar').value*/
                     if(String(tableNo.id).substring(0,5) == 'Table'){
-                        tabLab.innerText = String(tableNo.id).substring(0,5) + " " + String(tableNo.id).substring(6,String(tableNo.id).length)
+                        tabLab.innerText = String(tableNo.id).substring(0,5) + " " + String(tableNo.id).substring(6,10)
                     }
                     else{
                         tabLab.innerText = "Private Room"
