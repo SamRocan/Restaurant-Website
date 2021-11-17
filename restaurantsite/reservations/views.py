@@ -3,6 +3,9 @@ from django.shortcuts import render
 from .models import Reservation, Table
 from .forms import ReservationForm
 from datetime import datetime, timedelta, timezone
+from django.core.mail import send_mail
+from django.conf import settings
+
 # Create your views here.
 def reservations_home(request):
     tables = Table.objects.all()
@@ -88,6 +91,15 @@ def reservation_complete(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             name = form.cleaned_data['name']
+            subject = "Sending an email with Django"
+            message = "Test email has "
+
+            # send the email to the recipient
+            send_mail(subject, message,
+                      settings.DEFAULT_FROM_EMAIL, [email])
+
+            # set the variable initially created to True
+            messageSent = True
             Reservation.objects.create(table=table, name=name, email=email,  people=info[2], date=dt)
             return render(request,'main/index.html')
 
