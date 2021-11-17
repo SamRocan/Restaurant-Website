@@ -1,8 +1,27 @@
 from django.db import models
-
+from django.core.validators import MinValueValidator
 # Create your models here.
 class Menu(models.Model):
-    pass
+    name = models.CharField(max_length=255, default="Menu")
+
+    def __str__(self):
+        return self.name
+
+class MenuSection(models.Model):
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE, default="")
+    name = models.CharField(max_length=255, default="")
+
+    def __str__(self):
+        return str(self.name) + " ("+ str(self.menu.name) + ")"
 
 class MenuItem(models.Model):
-    pass
+    section = models.ForeignKey(MenuSection, on_delete=models.CASCADE, default="")
+    name = models.CharField(max_length=255, default="")
+    description = models.CharField(max_length=255, default="")
+    price = models.FloatField(
+        validators=[MinValueValidator(0.00)],
+        default="1"
+    )
+    def __str__(self):
+        return str(self.name) + " ("+ str(self.section.name) + ")"
+
