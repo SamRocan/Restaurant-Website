@@ -8,20 +8,21 @@ class Menu(models.Model):
         return self.name
 
 class MenuSection(models.Model):
-    menu = models.ForeignKey(Menu, on_delete=models.CASCADE, default="")
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE, default="", related_name='sections')
     name = models.CharField(max_length=255, default="")
 
     def __str__(self):
         return str(self.name) + " ("+ str(self.menu.name) + ")"
 
 class MenuItem(models.Model):
-    section = models.ForeignKey(MenuSection, on_delete=models.CASCADE, default="")
+    section = models.ForeignKey(MenuSection, on_delete=models.CASCADE, default="",  related_name='items')
     name = models.CharField(max_length=255, default="")
     description = models.CharField(max_length=255, default="")
     price = models.FloatField(
         validators=[MinValueValidator(0.00)],
-        default="1"
+        default=1
     )
+
     def __str__(self):
         return str(self.name) + " ("+ str(self.section.name) + ")"
 

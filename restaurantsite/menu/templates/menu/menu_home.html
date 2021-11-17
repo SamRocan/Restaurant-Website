@@ -9,5 +9,19 @@
 </div>
 <div class="container-fluid">
 <h1>Menu</h1>
+{% for x in menu %}
+    <p>{{x}}</p>
+    <ul>
+    {% for z in x.sections.all %}
+        <li>{{z}}</li>
+        <ul>
+            {% for y in z.items.all %}
+            <li>{{y.name}} - {{y.description}} £({{y.price}})</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </ul>
+    <hr>
 </div>
+{% endfor %}
 {% endblock %}
