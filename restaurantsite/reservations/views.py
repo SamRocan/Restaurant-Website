@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Reservation, Table
+from .forms import ReservationForm
 from datetime import datetime, timedelta, timezone
 # Create your views here.
 def reservations_home(request):
@@ -59,10 +60,37 @@ def reservation_confirm(request):
     t = str(request.session['table']).replace('Table_', '')
     table = Table.objects.get(table_number=int(t))
     dt = datetime.fromisoformat(str(info[0]) + " " + str(info[1]) +"+00:00")
-    Reservation.objects.create(table=table, name="blank", email="blank@gmail.com",  people=info[2], date=dt)
     info.append(request.session['table'])
+    form = ReservationForm
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+            # check whether it's valid:
+        if form.is_valid():
+            email = form.email
+            name = form.name
+            Reservation.objects.create(table=table, name=name, email=email,  people=info[2], date=dt)
+            return render('main/index.html')
 
-    return render(request, 'reservations/reservation_confirm.html', {'info':info})
+    return render(request, 'reservations/reservation_confirm.html', {'info':info, 'form':form})
+
+def reservation_complete(request):
+    info = request.session['reservation']
+    for i in info:
+        print(i)
+
+    t = str(request.session['table']).replace('Table_', '')
+    table = Table.objects.get(table_number=int(t))
+    dt = datetime.fromisoformat(str(info[0]) + " " + str(info[1]) +"+00:00")
+    info.append(request.session['table'])
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            name = form.cleaned_data['name']
+            Reservation.objects.create(table=table, name=name, email=email,  people=info[2], date=dt)
+            return render(request,'main/index.html')
+
 def json_view(request):
     request.session['table'] = request.GET.get('result', None)
     data = {
