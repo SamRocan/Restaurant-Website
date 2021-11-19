@@ -65,14 +65,6 @@ def reservation_confirm(request):
     dt = datetime.fromisoformat(str(info[0]) + " " + str(info[1]) +"+00:00")
     info.append(request.session['table'])
     form = ReservationForm
-    if request.method == 'POST':
-        form = ReservationForm(request.POST)
-            # check whether it's valid:
-        if form.is_valid():
-            email = form.email
-            name = form.name
-            Reservation.objects.create(table=table, name=name, email=email,  people=info[2], date=dt)
-            return render('main/index.html')
 
     return render(request, 'reservations/reservation_confirm.html', {'info':info, 'form':form})
 
@@ -101,7 +93,8 @@ def reservation_complete(request):
             # set the variable initially created to True
             messageSent = True
             Reservation.objects.create(table=table, name=name, email=email,  people=info[2], date=dt)
-            return render(request,'main/index.html')
+            return render(request,'reservations/reservation_complete.html')
+
 
 def json_view(request):
     request.session['table'] = request.GET.get('result', None)

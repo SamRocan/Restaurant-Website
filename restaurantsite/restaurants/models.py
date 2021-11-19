@@ -31,7 +31,7 @@ class OpeningHours(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.from_time) + " - " + str(self.to_time)
+        return str(self.restaurant.name) + " (" + str(self.weekday) + "): " + str(self.from_time) + " - " + str(self.to_time)
 
     class Meta:
         ordering = ('weekday', 'from_time')
