@@ -7,10 +7,11 @@
     opacity: 1;
     background-size: cover;
     position: relative;
-    /*background-image:linear-gradient(
-            rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.3)
-    ), url('https://media.timeout.com/images/103122427/image.jpg');*/
     background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
     background-repeat:no-repeat;
+    transition: 300ms;
+}
+.cat-banner:hover {
+    transform: scale(1.05);
+    transition: 300ms;
 }
