@@ -1,17 +1,24 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block extra-css%}
+<link rel="stylesheet" href="{% static 'css/menu_style.css' %}">
 {% endblock %}
 {% block content %}
-<div style="padding-top: 64px;" >
-</div>
-<div class="container-fluid">
-</div>
-<div class="container-fluid">
-<h1>Menu</h1>
+<div class="container-fluid p-0">
 {% for x in menu %}
-    <p>{{x}}</p>
-    <ul>
+    <!--<p>{{x}}</p>-->
+    <div style="background-color: black;">
+        <div class="cat-banner" style="background-image:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  url({{x.displayImage.url}});">
+            <a href="http://google.com">
+            <div style="height: calc(100vh / 3);">
+                <div class="center">
+                    <h1>{{x}}</h1>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <!--<ul>
     {% for z in x.sections.all %}
         <li>{{z}}</li>
         <ul>
@@ -20,8 +27,7 @@
             {% endfor %}
         </ul>
         {% endfor %}
-    </ul>
-    <hr>
-</div>
+    </ul>-->
 {% endfor %}
+</div>
 {% endblock %}

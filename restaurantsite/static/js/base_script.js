@@ -21,8 +21,8 @@ $(testbutton).click(function() {
         $(navMain).animate({
             opacity: 1
         });
-        /* Prevents scroll on */
-        window.onscroll = function () { window.scrollTo(0, 0); };
+        /* Prevents scroll on
+        window.onscroll = function () { window.scrollTo(0, 0); };*/
     } else {
         $(navMain).height("0px")
         $(spinner1).animate({
