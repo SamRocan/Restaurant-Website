@@ -11,7 +11,7 @@
     background-image:linear-gradient(
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
-    ), url('https://images6.alphacoders.com/434/434470.jpg');
+    ), url('https://media.timeout.com/images/103122427/image.jpg');
     background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
     background-repeat:no-repeat;
 }
@@ -51,7 +51,7 @@
 #main{
     color: whitesmoke;
     height: 0px;
-    background-color: #273534;
+    background-color: #3b7487;
     z-index: 1;
     visibility: visible;
     opacity: 0;
