@@ -1,9 +1,12 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+from autoslug import AutoSlugField
+
 # Create your models here.
 class Menu(models.Model):
     name = models.CharField(max_length=255, default="Menu")
     displayImage = models.ImageField(upload_to='menu/', default='menu/default.jpg')
+    slug = AutoSlugField(populate_from='name')
 
     def __str__(self):
         return self.name
