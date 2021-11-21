@@ -8,17 +8,22 @@
 <p>{{menu_cat.information|safe }}</p>
 <hr style="width: 80%; margin: auto;">
 <br>
-{% for x in menu_cat.sections.all %}
-<h2>{{x.name}}</h2>
-    {%for z in x.items.all %}
-        <div style=" line-height: 80%;">
-        <p>{{z.name}} - £{{z.price|floatformat:2}} <a href="#" data-toggle="popover" title="Contains: {{z.allergens}}" data-content="And here's some amazing content. It's very engaging. Right?"><span class="fa fa-info"></span></a></p>
-            <p>{{z.description}}</p>
+<div class="container">
+    <div class="row">
+    {% for x in menu_cat.sections.all %}
+        <div class="col-md-4">
+            <h2>{{x.name}}</h2>
+            {%for z in x.items.all %}
+                <div style=" line-height: 80%;">
+                    <p>{{z.name}} - £{{z.price|floatformat:2}} <a href="#" class="toggler" data-toggle="popover" title="Contains: {{z.allergens}}" data-content="And here's some amazing content. It's very engaging. Right?"><span class="fa fa-info"></span></a></p>
+                    <p>{{z.description}}</p>
+                </div>
+            {% endfor %}
+            <br>
         </div>
-    {% endfor %}
-</label>
-<br>
-{% endfor %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
 {% block extraJS %}
 <script>
