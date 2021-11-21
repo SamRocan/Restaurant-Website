@@ -1,9 +1,17 @@
 body{
     padding-top: 10%;
 }
-h1,h2,h3{
+h1,h2,h3,h4,p {
     text-align: center;
     font-family: "Roboto";
     letter-spacing: 1px;
     color: #393939;
+}
+span{
+    color: black;
+}
+a{
+    color: darkblue;
+    font-size: 6px;
+    vertical-align: top;
 }

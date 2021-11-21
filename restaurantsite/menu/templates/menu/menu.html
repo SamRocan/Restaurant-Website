@@ -5,9 +5,25 @@
 {% endblock %}
 {% block content %}
 <h1>{{menu_cat.name}}</h1>
+<p>{{menu_cat.information|safe }}</p>
 <hr style="width: 80%; margin: auto;">
 <br>
 {% for x in menu_cat.sections.all %}
 <h2>{{x.name}}</h2>
+    {%for z in x.items.all %}
+        <div style=" line-height: 80%;">
+        <p>{{z.name}} - £{{z.price|floatformat:2}} <a href="#" data-toggle="popover" title="Contains: {{z.allergens}}" data-content="And here's some amazing content. It's very engaging. Right?"><span class="fa fa-info"></span></a></p>
+            <p>{{z.description}}</p>
+        </div>
+    {% endfor %}
+</label>
+<br>
 {% endfor %}
+{% endblock %}
+{% block extraJS %}
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
 {% endblock %}
