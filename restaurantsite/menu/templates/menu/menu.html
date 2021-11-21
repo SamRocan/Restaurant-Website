@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block extra-css%}
+<link rel="stylesheet" href="{% static 'css/menu_style.css' %}">
+{% endblock %}
+{% block content %}
+<h1>{{menu_cat.name}}</h1>
+<hr style="width: 80%; margin: auto;">
+<br>
+{% for x in menu_cat.sections.all %}
+<h2>{{x.name}}</h2>
+{% endfor %}
+{% endblock %}
