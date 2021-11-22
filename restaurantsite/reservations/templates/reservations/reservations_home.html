@@ -41,10 +41,17 @@
             <div class="col-sm">
                 <input type="number" class="form-control" id="numVar" name="numVar" placeholder="No. of people" min="1">
             </div>
-            <input type="submit" class="btn btn-primary" value="Search">
+            <div class="container-fluid">
+                <input type="submit" class="btn btn-success" value="Search" style="width: 30%;">
+            </div>
         </div>
     </form>
-
+    {% if error == "" %}
+    {% else %}
+    <div class="alert alert-danger" role="alert" style="text-align: center">
+        {{error}}
+    </div>
+    {% endif %}
 
     <?xml version="1.0" encoding="utf-8"?>
     <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->

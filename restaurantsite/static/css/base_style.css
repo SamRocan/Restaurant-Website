@@ -131,3 +131,10 @@ a.filldiv {
     width: 35px;
     text-decoration: none;
 }
+footer{
+    margin-top: auto;
+}
+#footer-buttons a{
+    border-radius: 50%;
+    border: 0px solid black;
+}
