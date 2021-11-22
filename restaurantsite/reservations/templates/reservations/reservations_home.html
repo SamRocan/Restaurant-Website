@@ -14,7 +14,7 @@
         <h4 id="tabNum" name="tabVar"></h4>
     <a href="{% url 'reservation_confirm' %}" class="btn btn-success" style="display: none" id="resConfirm">Confirm Reservation</a>
     <br>
-    <form method="post" style="text-align: center">
+    <!--<form method="post" style="text-align: center">
         {% csrf_token %}
         <label for="dateVar">Select a time:</label>
         <input type="date" id="dateVar" name="dateVar">
@@ -28,15 +28,24 @@
         <input type="number" id="numVar" name="numVar">
             <input type="submit" value="Search">
 
-    </form>
-    <!--
-    <form method="post" style="text-align: center">
+    </form> -->
+    <form method="post" style="padding-bottom: 20px; text-align: center">
         {% csrf_token %}
-        {{ form.as_p }}
-        <div class="form-actions">
-            <button type="submit">Send</button>
+        <div class="row g-3">
+            <div class="col-sm-7">
+                <input type="date" class="form-control" id="dateVar" name="dateVar" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="col-sm">
+                <input type="time" class="form-control" id="timeVar" name="timeVar" placeholder="--:--">
+            </div>
+            <div class="col-sm">
+                <input type="number" class="form-control" id="numVar" name="numVar" placeholder="No. of people" min="1">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Search">
         </div>
-    </form>-->
+    </form>
+
+
     <?xml version="1.0" encoding="utf-8"?>
     <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -665,6 +674,5 @@
 </g>
 </svg>
 </div>
-<p>{{tables.0.table_number}}</p>
 
 {% endblock %}
