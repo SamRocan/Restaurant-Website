@@ -1,5 +1,5 @@
 from django import forms
 
 class ReservationForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField()
+    name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)

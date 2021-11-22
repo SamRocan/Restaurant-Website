@@ -67,10 +67,14 @@ def reservation_confirm(request):
     t = str(request.session['table']).replace('Table_', '')
     table = Table.objects.get(table_number=int(t))
     dt = datetime.fromisoformat(str(info[0]) + " " + str(info[1]) +"+00:00")
+    presentInfo = []
+    for i in info:
+        presentInfo.append(i)
+    presentInfo.append(t)
     info.append(request.session['table'])
     form = ReservationForm
 
-    return render(request, 'reservations/reservation_confirm.html', {'info':info, 'form':form})
+    return render(request, 'reservations/reservation_confirm.html', {'info':info, 'presentInfo':presentInfo, 'form':form})
 
 def reservation_complete(request):
     info = request.session['reservation']
