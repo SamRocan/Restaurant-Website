@@ -1,18 +1,21 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block extra-css%}
+<link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
 {% endblock %}
 {% block content %}
 <div style="padding-top: 64px;" >
 </div>
 <div class="container-fluid">
 </div>
-<div class="container-fluid">
+<div class="container-fluid" id="main-form">
     <form method="post" style="text-align: center">
+        <div class="form-group">
         {% csrf_token %}
         {{ form.as_p }}
         <div class="form-actions">
-            <button type="submit">Send</button>
+            <button type="submit" class="btn btn-success">Send</button>
+        </div>
         </div>
     </form>
 </div>
