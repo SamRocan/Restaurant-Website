@@ -4,31 +4,18 @@
 <link rel="stylesheet" href="{% static 'css/reservations_home_style.css' %}">
 {% endblock %}
 {% block content %}
-<div style="padding-top: 64px;" >
+<div style="padding-top: 64px;">
 </div>
 <div class="container-fluid">
 </div>
 <div class="container-fluid">
     <h1>Reservations</h1>
-
-        <h4 id="tabNum" name="tabVar"></h4>
-    <a href="{% url 'reservation_confirm' %}" class="btn btn-success" style="display: none" id="resConfirm">Confirm Reservation</a>
+        <div style="background-color: rgba(13, 166, 226, 0.2); width: 50% !important; margin-left: auto; margin-right: auto; border-radius: 5px; margin-bottom: 10px; ">
+            <h4 id="tabNum" name="tabVar"></h4>
+        </div>
+    <a href="{% url 'reservation_confirm' %}" class="btn btn-primary" style="display: none; width: 30%; margin-left: auto; margin-right: auto;" id="resConfirm">Confirm Reservation</a>
     <br>
-    <!--<form method="post" style="text-align: center">
-        {% csrf_token %}
-        <label for="dateVar">Select a time:</label>
-        <input type="date" id="dateVar" name="dateVar">
-        <br>
-        <br>
-        <label for="timeVar">Select a time:</label>
-        <input type="time" id="timeVar" name="timeVar">
-        <br>
-        <br>
-        <label for="numVar">No. of people: </label>
-        <input type="number" id="numVar" name="numVar">
-            <input type="submit" value="Search">
 
-    </form> -->
     <form method="post" style="padding-bottom: 20px; text-align: center">
         {% csrf_token %}
         <div class="row g-3">
@@ -94,7 +81,22 @@
                             data["info"].push(String(tableNo.id))
                             tabLab.innerText = ""
                             for (let i = 0; i < data["info"].length; i++) {
-                                tabLab.innerText += String(data["info"][i]) + "\n" ;
+                                var textLab = String(data["info"][i]).replace("_"," ")
+                                if(i==0){
+                                    tabLab.innerText += "\nDate: " + textLab  + "\n\n";
+                                }
+                                if(i==1){
+                                    tabLab.innerText += "Time: " + textLab  + "\n\n";
+                                }
+                                if(i==2){
+                                    tabLab.innerText += "People: " + textLab  + "\n\n";
+                                }
+                                if(i==3){
+                                    tabLab.innerText += "Table: " + textLab +"\n\n";
+                                }
+                                else{
+                                    //tabLab.innerText += String(data["info"][i]) + "\n" ;
+                                }
                             }
                             resConfirm.style.display = "block"
                         },
