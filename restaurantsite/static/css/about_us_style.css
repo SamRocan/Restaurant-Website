@@ -7,13 +7,12 @@ img{
 
 }
 .right{
-    margin-left: calc(100% - 400px);
     opacity: 0;
     transition: opacity 1s;
 }
 .left{
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity, 1s;
 }
 .aniText{
     opacity: 0;
@@ -22,10 +21,27 @@ img{
 
 .right.animate{
     opacity: 1;
+
 }
 .left.animate{
     opacity: 1;
 }
 .aniText.animate{
     opacity: 1;
+    /*
+    animation-duration: 0.5s;
+    animation-name: slidein;*/
 }
+
+/*
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}*/
