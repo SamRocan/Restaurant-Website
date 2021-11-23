@@ -18,12 +18,12 @@ def contact(request):
             try:
                 send_mail(name, message, settings.EMAIL_HOST_USER, ['samclendenan@icloud.com'])
             except BadHeaderError:
-                return render(request, "main/locations.html")
+                return render(request, "main/about_us.html")
             return render(request, 'main/index.html')
     return render(request, "main/contact.html", {'form': form})
 
 def successView(request):
     return render('Success! Thank you for your message.')
 
-def locations(request):
-    return render(request, 'main/locations.html')
+def about_us(request):
+    return render(request, 'main/about_us.html')
