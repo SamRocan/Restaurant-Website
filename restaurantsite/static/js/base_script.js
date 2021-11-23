@@ -5,7 +5,6 @@ var spinner3 = document.getElementById("m3")
 var navMain = document.getElementById("main")
 var navitems = document.getElementById("navlist")
 $(testbutton).click(function() {
-    console.log($(navMain).css("visibility"))
     if ($(spinner1).css("top") == "0px" ){
         $(navMain).height("calc(100vh + 60px)")
         $(spinner1).animate({
@@ -21,8 +20,14 @@ $(testbutton).click(function() {
         $(navMain).animate({
             opacity: 1
         });
-        /* Prevents scroll on
-        window.onscroll = function () { window.scrollTo(0, 0); };*/
+        setTimeout(function (){
+            {
+                window.onscroll = function () {
+                    window.scrollTo(0, 0);
+                };
+            }
+        }, 1000);
+            console.log("Done")
     } else {
         $(navMain).height("0px")
         $(spinner1).animate({
@@ -43,6 +48,7 @@ $(testbutton).click(function() {
         window.onscroll = function () {}
         }
 });
+/*
 var doc = $(document)
 const menu = document.getElementById('menu')
 const divs =  menu.querySelectorAll('div')
@@ -59,4 +65,4 @@ $(doc).scroll(function() {
             $(divs).css('background-color', 'white');
         })
     }
-});
+});*/
