@@ -4,7 +4,14 @@ var spinner2 = document.getElementById("m2")
 var spinner3 = document.getElementById("m3")
 var navMain = document.getElementById("main")
 var navitems = document.getElementById("navlist")
+
+const menu = document.getElementById('menu')
+const divs =  menu.querySelectorAll('div')
+
 $(testbutton).click(function() {
+    divs.forEach(function (todo){
+        $(divs).css('background-color', 'whitesmoke');
+    })
     if ($(spinner1).css("top") == "0px" ){
         $(navMain).height("calc(100vh + 60px)")
         $(spinner1).animate({
@@ -26,9 +33,11 @@ $(testbutton).click(function() {
                     window.scrollTo(0, 0);
                 };
             }
-        }, 1000);
-            console.log("Done")
+        }, 500);
     } else {
+        divs.forEach(function (todo){
+            $(divs).css('background-color', 'black');
+        })
         $(navMain).height("0px")
         $(spinner1).animate({
             top: '0px'
