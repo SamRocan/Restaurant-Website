@@ -1,10 +1,32 @@
 * {
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    height: 100vh;
+*:before,
+*:after {
+    box-sizing: border-box;
 }
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+.main-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 150px; /* height of your footer */
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#footer-buttons a{
+    border-radius: 50%;
+    border: 0px solid black;
+}
+
 .banner{
     z-index: 1;
     opacity: 1;
@@ -132,8 +154,4 @@ a.filldiv {
     height: 35px;
     width: 35px;
     text-decoration: none;
-}
-#footer-buttons a{
-    border-radius: 50%;
-    border: 0px solid black;
 }

@@ -1,8 +1,112 @@
-{% extends 'main/base.html' %}
 {% load static %}
-{% block extra-css%}
-{% endblock %}
-{% block content %}
-<h1>Locations</h1>
 
-{% endblock %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.0/js/all.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="main-container">
+    <div id="wrapper">
+        <div id="navbar">
+        </div>
+        <!--When / if changed back into logo, alter top in css
+        <h1 id="logo">Company Logo</h1>-->
+        <div id="main">
+            <div id="navlist" class="notVisibleList" style="padding-top: 5%;">
+                <h1><a href="{% url 'index' %}">Home</a></h1>
+                <h1><a href="{% url 'menu_home' %}">Menu</a></h1>
+                <h1><a href="{% url 'reservations_home' %}">Reservations</a></h1>
+                <h1><a href="{% url 'locations' %}">About Us</a></h1>
+                <h1><a href="{% url 'contact' %}">Contact</a></h1>
+            </div>
+        </div>
+        <div id="menu">
+            <a class="filldiv" href="#"></a>
+            <div id="m1"></div>
+            <div id="m2"></div>
+            <div id="m3"></div>
+        </div>
+    </div>
+<footer class="bg-light text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4" id="footer-buttons">
+            <!-- Facebook -->
+            <a
+                    class="btn btn-primary btn-floating m-1"
+                    style="background-color: #3b5998;"
+                    href="#!"
+                    role="button"
+            ><i class="fab fa-facebook-f"></i
+            ></a>
+
+            <!-- Twitter -->
+            <a
+                    class="btn btn-primary btn-floating m-1"
+                    style="background-color: #55acee;"
+                    href="#!"
+                    role="button"
+            ><i class="fab fa-twitter"></i
+            ></a>
+
+            <!-- Google -->
+            <a
+                    class="btn btn-primary btn-floating m-1"
+                    style="background-color: #dd4b39;"
+                    href="#!"
+                    role="button"
+            ><i class="fab fa-google"></i
+            ></a>
+
+            <!-- Instagram -->
+            <a
+                    class="btn btn-primary btn-floating m-1"
+                    style="background-color: #ac2bac;"
+                    href="#!"
+                    role="button"
+            ><i class="fab fa-instagram"></i
+            ></a>
+
+            <!-- Linkedin -->
+            <a
+                    class="btn btn-primary btn-floating m-1"
+                    style="background-color: #0082ca;"
+                    href="#!"
+                    role="button"
+            ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <!-- Github -->
+            <a
+                    class="btn btn-primary btn-floating m-1"
+                    style="background-color: #333333;"
+                    href="#!"
+                    role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.7);">
+        Created By
+        <a class="text-white" href="https://SamClendenan.com/" style="text-decoration: none">Sam Clendenan</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="{% static 'js/base_script.js' %}"></script>
+
+</body>
+</html>
