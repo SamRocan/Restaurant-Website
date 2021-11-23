@@ -1,7 +1,31 @@
 
 img{
+    margin-top: 20px;
     width: 400px;
+    margin-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+
 }
 .right{
     margin-left: calc(100% - 400px);
+    opacity: 0;
+    transition: opacity 1s;
+}
+.left{
+    opacity: 0;
+    transition: opacity 1s;
+}
+.aniText{
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.right.animate{
+    opacity: 1;
+}
+.left.animate{
+    opacity: 1;
+}
+.aniText.animate{
+    opacity: 1;
 }
