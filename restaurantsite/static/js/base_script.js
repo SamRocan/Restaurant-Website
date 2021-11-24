@@ -57,21 +57,4 @@ $(testbutton).click(function() {
         window.onscroll = function () {}
         }
 });
-/*
-var doc = $(document)
-const menu = document.getElementById('menu')
-const divs =  menu.querySelectorAll('div')
-const wrapper = document.getElementById('wrapper')
-$(doc).scroll(function() {
-    if ($(doc).scrollTop() >= $(wrapper).height()) {
-        divs.forEach(function (todo){
-            $(divs).css('background-color', 'black');
-        })
-        // user scrolled 50 pixels or more;
-        // do stuff
-    } else {
-        divs.forEach(function (todo){
-            $(divs).css('background-color', 'white');
-        })
-    }
-});*/
+

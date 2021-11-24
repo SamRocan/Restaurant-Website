@@ -9,7 +9,8 @@
         <div style="height: 100vh;">
             <div class="center">
                 <h1 style="font-size: 60px;">Generic Restaurant Name</h1>
-                <a href="https://www.youtube.com/" class="btn btn-primary">Did it work?</a>
+                <br>
+                <button id="downBut">&#65088;</button>
             </div>
         </div>
     </div>
@@ -17,53 +18,59 @@
 <div class="container-fluid" id="main-info">
     <div class="row">
         <div class="col-lg-6">
-            <h1>Next Section</h1>
-            <img src="pic1.jpg" class="img-fluid">
-            <br>
-            <br>
+            <img src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/article_1200_800/public/2020-10/24_michelin_star_02_%C2%A9iStock_1.jpg.webp?itok=K1_eqy-D" class="img-fluid">
         </div>
         <div class="col-lg-6">
-            <h1 style="text-align: center">Other Section</h1>
-            <p>akfga aiufbaifu basufbasi aiufbai abfiaf uasfiua uaifgia
-                iahsfbai biuafbi ebafiyb aebfisb bfasiyf bafiyb biufbsai bfaiuy
-                oihaav ubasiu jab iusaf aiubf aiusbf iaubf iausbs aisbd iaufaib
-                iahb iuabf iusbsf abiii oiaqjdb qejbn iahf iohduhq ihqef</p>
-            <a href="https://www.youtube.com/" class="btn btn-primary">Did it work?</a>
+            <h1 style="text-align: center">Michelin Star Quality</h1>
+            <p>A Michelin star is the ultimate hallmark of culinary excellence.
+                Michelin stars are awarded to restaurants judged to be of a particularly
+                high standard. Eateries that make the grade can be awarded one, two, or
+                three stars, and the accolade is much-coveted by chefs around the world.</p>
+            <a href="{% url 'menu_home' %}" class="btn btn-primary">See our menu's</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 order-2 order-lg-1">
+            <h1 style="text-align: center">Our Heritage</h1>
+            <p>The public dining room that ultimately came to be known as the restaurant
+                originated in France, and the French have continued to make major contributions
+                to the restaurant's development. The first restaurant proprietor is believed
+                to have been one A. Boulanger, a soup vendor, who opened his business in Paris
+                in 1765.</p>
+            <a href="{% url 'about_us' %}" class="btn btn-primary">Find out more</a>
+        </div>
+        <div class="col-lg-6  order-1 order-lg-2">
+            <img src="https://static01.nyt.com/images/2018/01/21/world/europe/21bocuse-print1/21bocusesub-videoSixteenByNineJumbo1600.jpg" class="img-fluid">
+            <br>
+            <br>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <h1 style="text-align: center">Other Section</h1>
-            <p>akfga aiufbaifu basufbasi aiufbai abfiaf uasfiua uaifgia
-                iahsfbai biuafbi ebafiyb aebfisb bfasiyf bafiyb biufbsai bfaiuy
-                oihaav ubasiu jab iusaf aiubf aiusbf iaubf iausbs aisbd iaufaib
-                iahb iuabf iusbsf abiii oiaqjdb qejbn iahf iohduhq ihqef</p>
-            <a href="https://www.youtube.com/" class="btn btn-primary">Did it work?</a>
-        </div>
-        <div class="col-lg-6">
-            <h1>Next Section</h1>
-            <img src="pic1.jpg" class="img-fluid">
-            <br>
-            <br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <h1>Next Section</h1>
-            <img src="pic1.jpg" class="img-fluid">
+            <img src="https://restaurantinteriordesign.eu/wp-content/uploads/2018/04/Hollywood_Roosevelt_Hotel.jpg" class="img-fluid">
             <br>
             <br>
         </div>
         <div class="col-lg-6">
-            <h1 style="text-align: center">Other Section</h1>
-            <p>akfga aiufbaifu basufbasi aiufbai abfiaf uasfiua uaifgia
-                iahsfbai biuafbi ebafiyb aebfisb bfasiyf bafiyb biufbsai bfaiuy
-                oihaav ubasiu jab iusaf aiubf aiusbf iaubf iausbs aisbd iaufaib
-                iahb iuabf iusbsf abiii oiaqjdb qejbn iahf iohduhq ihqef</p>
-            <a href="https://www.youtube.com/" class="btn btn-primary">Did it work?</a>
+            <h1 style="text-align: center">Quality Food, Quality Surroundings</h1>
+            <p>When you got out for me the food is often just the beginning of the experience.
+                There are many other aspects that contribute to the overall pleasure. At Generic
+                Restaurant, we have designed our interior to also be of the upmost quality, so you
+                and the people who you share your time with can be eat in comfort and luxury in
+                every regard.</p>
+            <a href="{% url 'reservations_home' %}" class="btn btn-primary">Make a reservation today</a>
         </div>
     </div>
 </div>
 {% endblock %}
 {% block extraJS %}
+<script>
+    var downBut = document.getElementById('downBut')
+    var mainInfo = document.getElementById('main-info')
+    $(downBut).click(function() {
+        var infoHeight = mainInfo.getBoundingClientRect()
+        console.log(infoHeight.top)
+        window.scrollTo(0, infoHeight.top);
+    });
+</script>
 {% endblock %}

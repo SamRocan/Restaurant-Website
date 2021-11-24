@@ -8,3 +8,20 @@
 #main-info{
     padding-bottom: 40px;
 }
+.col-lg-6{
+    margin-top: 30px;
+}
+#main-info img{
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+}
+.center button{
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    transition: 0.7s;
+    border:none;
+    background-color: rgba(0,0,0,0);
+}
+.center button:hover{
+    font-size: 50px;
+}
