@@ -16,7 +16,7 @@ def reservations_home(request):
     for table in tables:
         table.booked = False
         table.save()
-
+    postInfo = str(request.method)
     if(request.method=="POST"):
         try:
             #initialize all tables to not booked
@@ -56,7 +56,7 @@ def reservations_home(request):
                             table.booked = True
         except:
             error = "Please fill out all fields"
-    return render(request, 'reservations/reservations_home.html', {'tables':tables, 'reservations':reservations, 'error':error})
+    return render(request, 'reservations/reservations_home.html', {'tables':tables, 'reservations':reservations, 'error':error, 'postInfo':postInfo})
 
 def reservation_confirm(request):
 
