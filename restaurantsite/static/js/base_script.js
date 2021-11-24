@@ -33,7 +33,7 @@ $(testbutton).click(function() {
                     window.scrollTo(0, 0);
                 };
             }
-        }, 500);
+        }, 700);
     } else {
         divs.forEach(function (todo){
             $(divs).css('background-color', 'black');
