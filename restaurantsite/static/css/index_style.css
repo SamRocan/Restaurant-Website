@@ -25,3 +25,10 @@
 .center button:hover{
     font-size: 50px;
 }
+.fade-on-scroll{
+    opacity: 0;
+    transition: opacity 1s;
+}
+.fade-on-scroll.animate{
+    opacity: 1;
+}
