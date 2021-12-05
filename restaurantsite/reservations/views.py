@@ -2,8 +2,11 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Reservation, Table
 from .forms import ReservationForm
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from django.core.mail import send_mail
+
+from django.template import Context
+from django.template.loader import get_template, render_to_string
 from django.conf import settings
 
 # Create your views here.
@@ -93,10 +96,13 @@ def reservation_complete(request):
             name = form.cleaned_data['name']
             subject = "Sending an email with Django"
             message = "Test email has "
+            ctx = {'name': name, 'people':info[2], 'table':str(table.table_number), 'date':dt}
+            html_message = render_to_string("emails/reservation.html", ctx)
 
             # send the email to the recipient
-            send_mail(subject, message,
-                      settings.DEFAULT_FROM_EMAIL, [email])
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [email],
+                      fail_silently=False, auth_user=None, auth_password=None,
+                      connection=None, html_message=html_message)
 
             # set the variable initially created to True
             messageSent = True
