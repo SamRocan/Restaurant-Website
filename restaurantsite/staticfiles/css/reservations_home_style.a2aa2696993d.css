@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+.main-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 150px; /* height of your footer */
+}
+
+h1{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+#layout{
+    width: 100%;
+}
+
+/*Walls */
+g * {
+    fill: black;
+    stroke: black;
+}
+/*clear */
+
+#Table_1 .st1, #Table_2 .st1, #Table_3 .st1, #Table_4 .st1, #Table_5 .st1,
+#Table_6 .st1, #Table_7 .st1, #Table_8 .st1, #Table_9 .st1, #Table_10 .st1,
+#Table_11 .st1, #Table_12 .st1, #Table_13 .st1, #Table_14 .st1, #Table_15 .st1,
+#Table_16 .st1, #Table_17 .st1, #Table_18 .st1, #Table_19 .st1, #Table_20 .st1,
+#Booked_Room .st1{
+    stroke: none;
+    fill: none;
+}
+/*Available*/
+#Table_1 .st1, #Table_2 .st1, #Table_3 .st1, #Table_4 .st1, #Table_5 .st1,
+#Table_6 .st1, #Table_7 .st1, #Table_8 .st1, #Table_9 .st1, #Table_10 .st1,
+#Table_11 .st1, #Table_12 .st1, #Table_13 .st1, #Table_14 .st1, #Table_15 .st1,
+#Table_16 .st1, #Table_17 .st1, #Table_18 .st1, #Table_19 .st1, #Table_20 .st1,
+#Booked_Room .st1{
+    stroke: none;
+    fill: rgba(20, 167, 28, 0.2);
+}
+
+/*Not Available */
+#Table_1 .st1, #Table_2 .st1, #Table_3 .st1, #Table_4 .st1, #Table_5 .st1,
+#Table_6 .st1, #Table_7 .st1, #Table_8 .st1, #Table_9 .st1, #Table_10 .st1,
+#Table_11 .st1, #Table_12 .st1, #Table_13 .st1, #Table_14 .st1, #Table_15 .st1,
+#Table_16 .st1, #Table_17 .st1, #Table_18 .st1, #Table_19 .st1, #Table_20 .st1,
+#Booked_Room .st1{
+    stroke: none;
+    fill: rgba(224, 0, 0, 0.2);
+}
+
+
+/*Don't meet criteria */
+#Table_1 .st1, #Table_2 .st1, #Table_3 .st1, #Table_4 .st1, #Table_5 .st1,
+#Table_6 .st1, #Table_7 .st1, #Table_8 .st1, #Table_9 .st1, #Table_10 .st1,
+#Table_11 .st1, #Table_12 .st1, #Table_13 .st1, #Table_14 .st1, #Table_15 .st1,
+#Table_16 .st1, #Table_17 .st1, #Table_18 .st1, #Table_19 .st1, #Table_20 .st1,
+#Booked_Room .st1{
+    stroke: none;
+    fill: rgba(0, 0, 0, 0.0);
+
+}
+/*Selected*/
+#Table_1:hover .st1,#Table_2:hover .st1, #Table_3:hover .st1, #Table_4:hover .st1, #Table_5:hover .st1,
+#Table_6:hover .st1,#Table_7:hover .st1, #Table_8:hover .st1, #Table_9:hover .st1, #Table_10:hover .st1,
+#Table_11:hover .st1,#Table_12:hover .st1, #Table_13:hover .st1, #Table_14:hover .st1, #Table_15:hover .st1,
+#Table_16:hover .st1,#Table_17:hover .st1, #Table_18:hover .st1, #Table_19:hover .st1, #Table_20:hover .st1,
+#Booked_Room:hover .st1{
+    stroke: none;
+    fill: rgba(20, 167, 28, 0.2);
+    /*fill: rgba(0, 119, 224, 0.2);*/
+    cursor: pointer;
+}

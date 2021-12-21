@@ -1,0 +1,17 @@
+#main-form form{
+    color: black;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(59, 116, 135, 0.3);
+    padding: 40px;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+}
+body{
+    background-color: whitesmoke !important;
+}

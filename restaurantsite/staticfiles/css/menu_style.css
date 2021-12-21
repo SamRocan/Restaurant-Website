@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+body{
+    padding-top: 100px;
+}
+.main-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 150px; /* height of your footer */
+}
+h1,h2,h3,h4,p {
+    text-align: center;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+    color: #393939;
+}
+#menu_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+}
+span{
+    color: black;
+}
+.toggler{
+    color: darkblue;
+    font-size: 6px;
+    vertical-align: top;
+}
