@@ -8,7 +8,7 @@
     <div class="banner">
         <div style="height: 100vh;">
             <div class="center">
-                <h1 style="font-size: 60px;">Generic Restaurant Name</h1>
+                <h1 style="font-size: 60px;">Le Caprice Restau</h1>
                 <br>
                 <button id="downBut">&#65088;</button>
             </div>
@@ -18,7 +18,7 @@
 <div class="container-fluid" id="main-info">
     <div class="row">
         <div class="col-lg-6">
-            <img src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/article_1200_800/public/2020-10/24_michelin_star_02_%C2%A9iStock_1.jpg.webp?itok=K1_eqy-D" class="img-fluid fade-on-scroll">
+            <img src="{% static 'images/hp-image1.jpg' %}" class="img-fluid fade-on-scroll">
         </div>
         <div class="col-lg-6">
             <h1 style="text-align: center" class="fade-on-scroll">Michelin Star Quality</h1>
@@ -40,22 +40,22 @@
             <a href="{% url 'about_us' %}" class="btn btn-primary fade-on-scroll">Find out more</a>
         </div>
         <div class="col-lg-6  order-1 order-lg-2">
-            <img src="https://static01.nyt.com/images/2018/01/21/world/europe/21bocuse-print1/21bocusesub-videoSixteenByNineJumbo1600.jpg" class="img-fluid fade-on-scroll">
+            <img src="{% static 'images/hp-image2.jpg' %}" class="img-fluid fade-on-scroll">
             <br>
             <br>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <img src="https://restaurantinteriordesign.eu/wp-content/uploads/2018/04/Hollywood_Roosevelt_Hotel.jpg" class="img-fluid fade-on-scroll">
+            <img src="{% static 'images/hp-image3.jpg' %}" class="img-fluid fade-on-scroll">
             <br>
             <br>
         </div>
         <div class="col-lg-6">
             <h1 class="fade-on-scroll" style="text-align: center">Quality Food, Quality Surroundings</h1>
             <p class="fade-on-scroll">When you got out for me the food is often just the beginning of the experience.
-                There are many other aspects that contribute to the overall pleasure. At Generic
-                Restaurant, we have designed our interior to also be of the upmost quality, so you
+                There are many other aspects that contribute to the overall pleasure. At Le Caprice Restau,
+                we have designed our interior to also be of the upmost quality, so you
                 and the people who you share your time with can be eat in comfort and luxury in
                 every regard.</p>
             <a href="{% url 'reservations_home' %}" class="btn btn-primary fade-on-scroll">Make a reservation today</a>

@@ -13,7 +13,7 @@ body{
     background-image:linear-gradient(
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
-    ), url('https://media.timeout.com/images/103122427/image.jpg');
+    ), url('/static/images/bg-image.jpg');
     background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
     background-repeat:no-repeat;
 }
