@@ -15,3 +15,19 @@
 body{
     background-color: whitesmoke !important;
 }
+.custom-btn {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #436981;
+    padding: 5px 25px 5px 25px;
+    color: black;
+    text-decoration: none;
+    font-weight: lighter;
+    background-color: rgba(67, 105, 129, 0.2);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.custom-btn:hover {
+    background-color: #436981;
+    color: white;
+    text-decoration: none;
+}
