@@ -16,12 +16,15 @@
             {% csrf_token %}
             <div class="row g-3">
                 <div class="col-sm-7">
+                    <h4 class="res-info-label">Date</h4>
                     <input type="date" class="form-control" id="dateVar" name="dateVar" placeholder="dd/mm/yyyy">
                 </div>
                 <div class="col-sm">
+                    <h4 class="res-info-label">Time</h4>
                     <input type="time" class="form-control" id="timeVar" name="timeVar" placeholder="--:--">
                 </div>
                 <div class="col-sm">
+                    <h4 class="res-info-label">People</h4>
                     <input type="number" class="form-control" id="numVar" name="numVar" placeholder="No. of people" min="1">
                 </div>
                 <div class="container-fluid">

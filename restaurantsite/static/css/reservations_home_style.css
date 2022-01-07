@@ -21,8 +21,12 @@ body {
 h1{
     text-align: center;
 }
-h4{
+h3{
     text-align: center;
+}
+.res-info-label{
+    text-align: center;
+    display: none;
 }
 #layout{
     width: 100%;
@@ -85,7 +89,6 @@ g * {
     /*fill: rgba(0, 119, 224, 0.2);*/
     cursor: pointer;
 }
-
 .custom-btn {
     display: inline-block;
     text-align: center;
@@ -133,4 +136,9 @@ g * {
     background-color: teal;
     color: white;
     text-decoration: none;
+}
+@media only screen and (max-width: 575px) {
+    .res-info-label {
+        display: block;
+    }
 }
