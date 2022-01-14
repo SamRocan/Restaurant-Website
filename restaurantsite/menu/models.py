@@ -36,6 +36,7 @@ ALLERGENS = ((0, 'None'),
              (12, 'Nuts'),
              (13, 'Sesame Seeds'),
              (14, 'Sulphur Dioxide'))
+
 class MenuItem(models.Model):
     section = models.ForeignKey(MenuSection, on_delete=models.CASCADE, default="",  related_name='items')
     name = models.CharField(max_length=255, default="")
